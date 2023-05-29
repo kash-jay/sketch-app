@@ -42,7 +42,6 @@ body {
     display: flex;
     flex: 1;
     border: 0.5px solid grey;
-    opacity: 0.5;
     padding: 1px;
 }
 

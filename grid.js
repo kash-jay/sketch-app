@@ -1,12 +1,14 @@
 let gridSize = 50;
 
-// let draw = false;
+let draw = true;
 
-// function colorSquare() {
-//     if (draw) {
-
-//     }
-// }
+function colorSquare(event) {
+    const square = event.target;
+    console.log("Changing color");
+    if (draw) {
+        square.style.backgroundColor = 'white';
+    }
+}
 
 function createGrid(gridSize){
     const grid = document.querySelector('.grid');
@@ -16,22 +18,15 @@ function createGrid(gridSize){
         for (let j = 0; j < gridSize; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
+            square.addEventListener('click', colorSquare)
+            
             row.appendChild(square);
         }
         grid.appendChild(row)
     }
 }
 
-const squares = document.querySelectorAll('.square');
-
-squares.forEach((square) => {
-    square.addEventListener('onclick', function() {
-        square.style.cssText = "padding: 20px;";
-    });
-})
-
-
-
-
-
 createGrid(gridSize);
+
+
+
