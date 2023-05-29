@@ -1,10 +1,7 @@
 body {
     margin: 0;
     background-color: black;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-    /* align-items: center; */
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -13,11 +10,24 @@ body {
     display: flex;
     margin: 0;
     padding: 0;
-    border-bottom: 2px solid (3, 125, 125);
+    border-bottom: 2px solid rgb(36, 36, 36);
     padding: 10px;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+}
+
+.title {
     color: white;
+    font-size: 32px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 8px;
+    padding-inline: 16px;
+    font-size: 16px;
 }
 
 .grid {

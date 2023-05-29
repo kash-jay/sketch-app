@@ -1,12 +1,26 @@
-let gridSize = 50;
+let gridSize = 24;
 
-let draw = true;
+let draw = false;
+
+let color = 'white';
+
+function setGrid(num) {
+    gridSize = num;
+}
+
+
+function setDraw() {
+    draw = true;
+}
+
+function resetDraw() {
+    draw = false;
+}
 
 function colorSquare(event) {
     const square = event.target;
-    console.log("Changing color");
     if (draw) {
-        square.style.backgroundColor = 'white';
+        square.style.backgroundColor = color;
     }
 }
 
@@ -18,15 +32,30 @@ function createGrid(gridSize){
         for (let j = 0; j < gridSize; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
-            square.addEventListener('click', colorSquare)
-            
+            square.addEventListener('mousedown', setDraw);
+            square.addEventListener('mouseover', colorSquare);
+            square.addEventListener('mouseup', resetDraw);
             row.appendChild(square);
         }
         grid.appendChild(row)
     }
 }
 
+function resetGrid(){
+    console.log("Clear");
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        console.log(square.style.backgroundColor);
+        square.style.backgroundColor = 'black';
+    })
+}
+
 createGrid(gridSize);
+
+const clearButton = document.getElementById('clear');
+
+clearButton.addEventListener('click', resetGrid);
+
 
 
 
