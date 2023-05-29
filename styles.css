@@ -1,0 +1,12 @@
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px;
+}
+
+.square {
+    display: flex;
+    flex: 1;
+    border: 2px solid red;
+    /* padding: 8px; */
+}
