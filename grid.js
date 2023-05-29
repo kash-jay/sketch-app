@@ -1,14 +1,37 @@
-const grid = document.querySelector('.grid');
+let gridSize = 50;
 
-const gridSize = grid.clientWidth * grid.clientHeight;
+// let draw = false;
 
-let numSquares = 256;
+// function colorSquare() {
+//     if (draw) {
 
-const padding = gridSize/numSquares;
+//     }
+// }
 
-for (let i = 0; i < numSquares; i++) {
-    const square = document.createElement('div');
-    square.classList.add('square');
-    square.style.padding = padding;
-    grid.appendChild(square);
+function createGrid(gridSize){
+    const grid = document.querySelector('.grid');
+    for (let i = 0; i < gridSize; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for (let j = 0; j < gridSize; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            row.appendChild(square);
+        }
+        grid.appendChild(row)
+    }
 }
+
+const squares = document.querySelectorAll('.square');
+
+squares.forEach((square) => {
+    square.addEventListener('onclick', function() {
+        square.style.cssText = "padding: 20px;";
+    });
+})
+
+
+
+
+
+createGrid(gridSize);
