@@ -30,6 +30,10 @@ body {
     font-size: 32px;
 }
 
+#color {
+    background-color: rgb(57, 57, 57);
+}
+
 #clear {
     background-color: rgb(57, 57, 57);
     color: white;
