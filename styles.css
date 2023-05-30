@@ -16,6 +16,15 @@ body {
     align-items: center;
 }
 
+.slider-container {
+    display: flex;
+    gap: 8px;
+}
+
+.slider-text{
+    color: white;
+}
+
 .title {
     color: white;
     font-size: 32px;

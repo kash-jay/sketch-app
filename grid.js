@@ -1,13 +1,28 @@
-let gridSize = 24;
-
 let draw = false;
 
 let color = 'white';
 
+var slider = document.getElementById('slider');
+var sliderVal = document.querySelector('.slider-text');
+let gridSize = slider.value;
+var sliderContainer = document.querySelector('.slider-container');
+
+
+slider.oninput = function() {
+    gridSize = slider.value;
+    sliderVal.textContent = gridSize + "x" + gridSize;
+    console.log("Slider value: " + sliderVal.textContent);
+    console.log("GridSize: " + gridSize);
+    let squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.remove();
+    });
+    createGrid(gridSize);
+}
+
 function setGrid(num) {
     gridSize = num;
 }
-
 
 function setDraw() {
     draw = true;
@@ -55,7 +70,3 @@ createGrid(gridSize);
 const clearButton = document.getElementById('clear');
 
 clearButton.addEventListener('click', resetGrid);
-
-
-
-
