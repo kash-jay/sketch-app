@@ -8,18 +8,16 @@ var sliderContainer = document.querySelector('.slider-container');
 
 var colorPicker = document.getElementById('color');
 let color = colorPicker.value;
-console.log("color: " + colorPicker.value);
+colorPicker.style.borderColor = color;
 
 colorPicker.oninput = function() {
-    console.log("color: " + colorPicker.value);
     color = colorPicker.value;
+    colorPicker.style.borderColor = color;
 }
 
 slider.oninput = function() {
     gridSize = slider.value;
     sliderVal.textContent = gridSize + "x" + gridSize;
-    console.log("Slider value: " + sliderVal.textContent);
-    console.log("GridSize: " + gridSize);
     let squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.remove();

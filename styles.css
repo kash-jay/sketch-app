@@ -31,7 +31,24 @@ body {
 }
 
 #color {
-    background-color: rgb(57, 57, 57);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#color::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+#color::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
 }
 
 #clear {
