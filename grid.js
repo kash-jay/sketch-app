@@ -13,7 +13,6 @@ console.log("color: " + colorPicker.value);
 colorPicker.oninput = function() {
     console.log("color: " + colorPicker.value);
     color = colorPicker.value;
-
 }
 
 slider.oninput = function() {
@@ -43,6 +42,11 @@ function colorSquare(event) {
     }
 }
 
+function colorOneSquare(event) {
+    const square = event.target;
+    square.style.backgroundColor = color;
+}
+
 function createGrid(gridSize){
     const grid = document.querySelector('.grid');
     grid.innerHTML = '';
@@ -55,6 +59,7 @@ function createGrid(gridSize){
             square.addEventListener('mousedown', setDraw);
             square.addEventListener('mouseover', colorSquare);
             square.addEventListener('mouseup', resetDraw);
+            square.addEventListener('click', colorOneSquare);
             row.appendChild(square);
         }
         grid.appendChild(row)
