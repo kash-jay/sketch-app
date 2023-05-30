@@ -1,12 +1,10 @@
 let draw = false;
-
 let color = 'white';
 
 var slider = document.getElementById('slider');
 var sliderVal = document.querySelector('.slider-text');
 let gridSize = slider.value;
 var sliderContainer = document.querySelector('.slider-container');
-
 
 slider.oninput = function() {
     gridSize = slider.value;
@@ -18,10 +16,6 @@ slider.oninput = function() {
         square.remove();
     });
     createGrid(gridSize);
-}
-
-function setGrid(num) {
-    gridSize = num;
 }
 
 function setDraw() {
@@ -41,6 +35,7 @@ function colorSquare(event) {
 
 function createGrid(gridSize){
     const grid = document.querySelector('.grid');
+    grid.innerHTML = '';
     for (let i = 0; i < gridSize; i++) {
         const row = document.createElement('div');
         row.classList.add('row');
