@@ -21,13 +21,14 @@ body {
     font-size: 32px;
 }
 
-button {
-    background-color: black;
+#clear {
+    background-color: rgb(57, 57, 57);
     color: white;
     border-radius: 8px;
     padding: 8px;
     padding-inline: 16px;
     font-size: 16px;
+    border: 2px solid white;
 }
 
 .grid {
