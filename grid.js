@@ -1,10 +1,20 @@
 let draw = false;
-let color = 'white';
+// let color = 'white';
 
 var slider = document.getElementById('slider');
 var sliderVal = document.querySelector('.slider-text');
 let gridSize = slider.value;
 var sliderContainer = document.querySelector('.slider-container');
+
+var colorPicker = document.getElementById('color');
+let color = colorPicker.value;
+console.log("color: " + colorPicker.value);
+
+colorPicker.oninput = function() {
+    console.log("color: " + colorPicker.value);
+    color = colorPicker.value;
+
+}
 
 slider.oninput = function() {
     gridSize = slider.value;
